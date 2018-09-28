@@ -2,11 +2,11 @@ require "pry"
 def starts_with_a_vowel?(word)
   #binding.pry
   #word[0].match(/[aeiouAEIOU]/) == nil ? false : true 
-  word.match(/^[aeiouAEIOU]/) == nil ? false : true 
+  word.match(/^[aeiou]/i) ?  true : false 
 end
 
 def words_starting_with_un_and_ending_with_ing(text)
-  text.scan(/\bun\S*ing/) 
+  text.scan(/\bun\S*ing\b/) 
 end
 
 def words_five_letters_long(text)
@@ -14,9 +14,9 @@ def words_five_letters_long(text)
 end
 
 def first_word_capitalized_and_ends_with_punctuation?(text)
-  text.match(/^[A-Z].*[.?,]$/) == nil ? false : true 
+  text.match(/^[A-Z].*[.?,!]$/) ? true : false 
 end
 
 def valid_phone_number?(phone)
-  phone.match(/\(?\d{3}\)?[\s\.\-]?\d{3}[\s\.\-]?\d{4}/) == nil ? false : true 
+  phone.match(/\(?\d{3}\)?[\s\.\-]?\d{3}[\s\.\-]?\d{4}/) ? true : false
 end
